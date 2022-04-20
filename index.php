@@ -34,7 +34,6 @@
                         <div class="post-info">
                             <h2>Become Web Developer</h2>
                             <div class="user-info">
-                                <img src="./Images/avatar.jpeg" alt="">
                                 <span>Yumi Kanzaki,</span>
                                 <span>August 1, 2021</span>
                             </div>
