@@ -1,15 +1,14 @@
-<?php
+<?php 
 
-@include '../config.php';
+include '../articles.php';
+include '../config.php';
 
-session_start();
+$mysqli = connect();
+if (!$mysqli) exit;
 
-if(!isset($_SESSION['admin_name'])) {
-    header('location:../backend/login_form.php');
-}
+$tabPost = AllArticles($mysqli);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,19 +58,25 @@ if(!isset($_SESSION['admin_name'])) {
                         </tr>
                     </thead>
                     <tbody>
+                    <?php 
+      for($i = 0; $i < count($tabPost);$i++) {
+      ?>
                         <tr>
-                            <td>1</td>
-                            <td><img src="../Images/Post1.jpg" ></td>
-                            <td>Test</td>
-                            <td>Yumi</td>
-                            <td>02-16-21</td>
-                            <td>Lorem ipsum dolor sit amet.</td>
+                            <td><?= $tabPost[$i]['id'] ?></td>
+                            <td><?= $tabPost[$i]['postimage'] ?></td>
+                            <td><?= $tabPost[$i]['title'] ?></td>
+                            <td><?= $tabPost[$i]['auteur'] ?></td>
+                            <td><?= $tabPost[$i]['date'] ?></td>
+                            <td><?= $tabPost[$i]['contenu'] ?></td>
                             <td>
                                 <button><i class="fa-solid fa-book-open"></i></button>
                                 <button><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button><i class="fa-solid fa-trash"></i></button>
                             </td>
                         </tr>
+                        <?php 
+      }
+    ?>
                     </tbody>
                 </table>
             </div>
