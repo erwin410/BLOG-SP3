@@ -1,3 +1,16 @@
+<?php
+include './function.php';
+
+$mysqli = new mysqli("192.168.64.2", "user1", "", "social");
+if ($mysqli->connect_errno) {
+    echo "Problème de connexion à la base de données !";
+    exit();
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,25 +40,9 @@
 
     <!-- Main Content Starts -->
     <div class="container main">
-            <!-- Column1 -->
-                <div class="col">
-                    <div class="post">
-                        <img class="post-img" src="./Images/Post1.jpg" alt="">
-                        <div class="post-info">
-                            <h2>Become Web Developer</h2>
-                            <div class="user-info">
-                                <span>Yumi Kanzaki,</span>
-                                <span>August 1, 2021</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Eligendi maiores dolorem ad explicabo, dignissimos totam animi dolore, 
-                                unde, tenetur cum accusantium veritatis quia eius laudantium?</p>
-                        </div>
-                    </div>
-
-                    
-                   
-    </div>
+           <?php 
+            showPost(AllArticles($mysqli));
+           ?>
 </div>
     <!-- Main Content ends -->
 
@@ -59,3 +56,6 @@
     <script src="./script/script.js"></script>
 </body>
 </html>
+<?php
+$mysqli->close();
+?>

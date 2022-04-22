@@ -1,6 +1,6 @@
 <?php 
 
-include '../articles.php';
+include '../function.php';
 include '../config.php';
 
 $mysqli = connect();
@@ -40,7 +40,7 @@ $tabPost = AllArticles($mysqli);
             <div class="table-header">
                 <p>Liste des Articles</p>
                 <div>
-                    <button class="add-new">+ Ajouter</button>
+                    <button class="add-new"><a href="../backend/register.php">+ Ajouter</a></button>
                 </div>
             </div>
 
@@ -54,7 +54,8 @@ $tabPost = AllArticles($mysqli);
                             <th>Nom</th>
                             <th>Date</th>
                             <th>Contenu</th>
-                            <th>Action</th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,11 +69,9 @@ $tabPost = AllArticles($mysqli);
                             <td><?= $tabPost[$i]['auteur'] ?></td>
                             <td><?= $tabPost[$i]['date'] ?></td>
                             <td><?= $tabPost[$i]['contenu'] ?></td>
-                            <td>
-                                <button><i class="fa-solid fa-book-open"></i></button>
-                                <button><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button><i class="fa-solid fa-trash"></i></button>
-                            </td>
+                            <td><a href="../backend/update?id=<?= $tabPost[$i]['id'] ?>" class="fa-solid fa-pen-to-square" role="button"></a></td>
+                            <td><a href="../backend/delete?id=<?= $tabPost[$i]['id'] ?>" class="fa-solid fa-trash" role="button"></a></td>
+                            
                         </tr>
                         <?php 
       }
@@ -81,5 +80,6 @@ $tabPost = AllArticles($mysqli);
                 </table>
             </div>
         </div>
+        <script src="../script/script.js"></script>
 </body>
 </html>

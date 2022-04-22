@@ -123,11 +123,11 @@ a{
 
 .container.main{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 0.875rem;
     margin-top: -1.5rem;
 }
-
+ 
 .post-info h2:hover{
     text-decoration: underline;
     cursor: pointer;
@@ -163,7 +163,7 @@ a{
 
     .container.main{
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
     }
 
     .main .col{

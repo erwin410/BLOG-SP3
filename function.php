@@ -9,6 +9,7 @@ function AllArticles($mysqli)
     //Stocker les données
     while ($row = $result->fetch_assoc()) {
         $tabPosts[] = [
+            'id' => $row['id'],
             'postimage' => $row['postimage'],
             'title' => $row['title'],
             'auteur' => $row['auteur'],
