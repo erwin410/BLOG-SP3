@@ -30,8 +30,6 @@ $tabPost = AllArticles($mysqli);
 
                 <ul class="navigation">
                     <li><a href="../index.php">Accueil</a></li>
-                    <li><a href="register_form.php" class="btn">register</a></li>
-                    <li><a href="logout.php" class="btn">logout</a></li>
                 </ul>
             </div>
         </header>
@@ -80,6 +78,12 @@ $tabPost = AllArticles($mysqli);
                 </table>
             </div>
         </div>
+
+        <footer>
+            <div class="container footer">
+                <p>Future Coders © 2022</p>
+            </div>
+        </footer>
         <script src="../script/script.js"></script>
 </body>
 </html>

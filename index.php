@@ -31,8 +31,7 @@ if ($mysqli->connect_errno) {
                 </div>
 
                 <ul class="navigation">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="./backend/Listcrud.php">crud</a></li>
+                    <li><a href="./backend/Listcrud.php">Create</a></li>
                 </ul>
             </div>
         </header>
@@ -47,11 +46,11 @@ if ($mysqli->connect_errno) {
     <!-- Main Content ends -->
 
     <!-- Footer Starts -->
-        <!-- <footer>
+        <footer>
             <div class="container footer">
                 <p>Future Coders © 2022</p>
             </div>
-        </footer> -->
+        </footer>
     <!-- Footer Ends -->
     <script src="./script/script.js"></script>
 </body>
